@@ -390,7 +390,7 @@ export default function IndividualDentist() {
                     </caption>
                     <thead>
                       <tr>
-                        <th className="w-2/5 py-8 px-6 text-sm leading-5 font-medium text-gray-900 text-left align-top" scope="row">
+                        <th className="w-6/16 py-8 px-6 text-sm leading-5 font-medium text-gray-900 text-left align-top" scope="row">
                           <div className="p-4 bg-gray-200 rounded-lg">
                             <h3 className="text-xl font-bold text-dark-gray">Membership Pricing</h3>
                             <p className="text-dark-gray py-2">With annual and monthly payment options available, saving on your dental care has never been easier.</p>
@@ -402,7 +402,7 @@ export default function IndividualDentist() {
                           </div>
                         </th>
 
-                        <td className="w-1/5 h-full py-8 px-6 align-top">
+                        <td className="w-3/16 h-full py-8 px-6 align-top">
                           <div className="relative h-full w-full text-center table">
                             <Image 
                               publicID="/vantageone/VantageOne-classic-logo" 
@@ -417,7 +417,7 @@ export default function IndividualDentist() {
                           </div>
                         </td>
 
-                        <td className="w-1/5 h-full py-8 px-6 align-top">
+                        <td className="w-3/16 h-full py-8 px-6 align-top">
                           <div className="relative h-full w-full text-center table">
                             <Image 
                               publicID="/vantageone/VantageOne-premium-logo" 
@@ -432,7 +432,7 @@ export default function IndividualDentist() {
                           </div>
                         </td>
 
-                        <td className="w-1/5 h-full py-8 px-6 align-top">
+                        <td className="w-3/16 h-full py-8 px-6 align-top">
                           <div className="relative h-full w-full text-center table">
                             <Image 
                               publicID="/vantageone/VantageOne-premium-plus-logo" 
@@ -446,18 +446,20 @@ export default function IndividualDentist() {
                             <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">Select Membership</button>
                           </div>
                         </td>
-                        <td></td>
+                        <td className="w-1/16">
+                          &nbsp;&nbsp;
+                        </td>
                       </tr>
                     </thead>
                     <tbody 
                       // className="divide-y divide-gray-200"
                     >
                       <tr>
-                        <th class="bg-blue-600 py-3 pl-6 rounded-t-full" colspan="4" scope="colgroup"></th>
+                        <th class="bg-blue-600 py-3 pl-6 rounded-t-full" colspan="5" scope="colgroup"></th>
                       </tr>
                       <tr>
                         <th className="py-5 px-6 text-sm leading-5 font-normal text-white text-left bg-blue-600 " scope="row">50% OFF EXAMS</th>
-                        <td className="py-5 px-6">
+                        <td className="rounded-tl py-5 px-6">
                           <Image
                             publicId="/vantageone/home/circle-check-icon"
                             height="19"
@@ -484,8 +486,8 @@ export default function IndividualDentist() {
                           />
                           <span className="sr-only">Not included in Premium</span>
                         </td>
-                        <td className="bg-blue-600 mx-4">
-
+                        <td className="bg-blue-600 py-5 px-6">
+                          
                         </td>
                       </tr>
 
@@ -661,7 +663,7 @@ export default function IndividualDentist() {
                         </td>
                       </tr>
                       <tr>
-                        <th class="bg-blue-600 py-3 pl-6 rounded-b-full" colspan="4" scope="colgroup"></th>
+                        <th class="bg-blue-600 py-3 pl-6 rounded-b-full" colspan="5" scope="colgroup"></th>
                       </tr>
                     </tbody>
                   </table>
