@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Image, Transformation } from 'cloudinary-react';
 import { Layout } from "../components/layout/layout";
 
 export default function PrivacyPolicy() {
