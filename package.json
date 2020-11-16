@@ -1,0 +1,29 @@
+{
+  "name": "heartland-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@tailwindcss/ui": "^0.6.2",
+    "cloudinary-react": "1.6.7",
+    "google-map-react": "^2.1.8",
+    "next": "^9.5.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-select": "^3.1.0"
+  },
+  "devDependencies": {
+    "@iconify-icons/clarity": "^1.0.0",
+    "@iconify/react": "^1.1.3",
+    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "2.1.2",
+    "tailwindcss": "^1.9.6"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "Test implementation of tailwind css's responsive header."
+}
