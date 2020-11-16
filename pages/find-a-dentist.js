@@ -21,7 +21,7 @@ const ListItem = (props) => (
           </div>
           <div className="min-w-0 flex-1 pl-4 md:grid md:grid-cols-4 md:gap-4">
             <div className="col-span-3">
-              <div className="text-md leading-5 font-medium text-indigo-600 truncate">
+              <div className="text-md leading-5 font-medium text-blue-600 truncate">
                 {props.office.name}
               </div>
               <div className="mt-2 flex flex-col text-sm leading-5 text-gray-500">
@@ -52,9 +52,15 @@ const ListItem = (props) => (
   </li>
 );
 
-const MapMarker = ({ text }) => (
-  <div className="fill-current text-teal-600">
-    <Image publicId="vantageone/icons/map-marker-solid" height="15" width="15" />
+const MapMarker = ({ id, selectedOffice }) => (
+  <div className="fill-current text-teal-600 text-lg" >
+    <Image 
+      publicId="vantageone/icons/map-marker-solid"
+      className={`transform transition ease-in-out duration-500   ${ id === selectedOffice.name ? 'w-8' : 'w-4' }`}
+      // className={ id === selectedOffice.name ? "w-8" : "w-4" }
+      //height={id === selectedOffice.id ? '30' : '15'} 
+      //width={id === selectedOffice.id ? '30' : '15'} 
+    />
   </div>  
   );
 
@@ -74,11 +80,6 @@ export default function FindADentist() {
     lng: -83.0007337
   };
   const defaultMapCenter = { lat: 27.6100487, lng: -83.0007337 };
-
-  const handleChangeCenter = () => {
-    setMapCenter({ lat: 30.258999, lng: -97.7533257 });
-    setMapZoom(17);
-  }
 
   const handleClearSearches = () => {
     setMapCenter(defaultMapCenter);
@@ -250,9 +251,9 @@ export default function FindADentist() {
 
               {/* results section */}
               <div>
-                <div className="pb-4">
-                  <h1>Locations</h1>
-                  <span>{numOffices} results</span>
+                <div className="flex pb-4">
+                  <h3 className="text-blue-600 text-xl font-bold">Locations</h3>
+                  <span className="pt-1 pl-4 text-gray-500">{numOffices} results</span>
                 </div>
 
                 <div className="bg-white shadow overflow-y-scroll sm:rounded-md" style={{ maxHeight: '50vh' }}>
@@ -283,6 +284,7 @@ export default function FindADentist() {
                     lng={office.lng}
                     key={office.name}
                     id={office.name}
+                    selectedOffice={selectedOffice}
                   />
                 ))}
 
