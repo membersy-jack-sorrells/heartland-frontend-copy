@@ -244,11 +244,14 @@ export default function PickYourPlan() {
                             Upfront fee billed annually
                           </p>
                           <p className="mt-3 text-sm leading-5 text-blue-600">
+                            + $8 / user / mo
+                          </p>
+                          {/* <p className="mt-3 text-sm leading-5 text-blue-600">
                             + $8 / user / mo - first user
                           </p>
                           <p className="mt-3 text-sm leading-5 text-blue-600">
                             + $6 / user / mo - each user after
-                          </p>
+                          </p> */}
                           <p className="px-8 mt-3 text-xs leading-5 text-gray-700">
                             *Monthly payment varies dependent on the number of
                             members on the same plan.
@@ -375,11 +378,14 @@ export default function PickYourPlan() {
                             Upfront fee billed annually
                           </p>
                           <p className="mt-3 text-sm leading-5 text-blue-600">
+                            + $8 / user / mo
+                          </p>
+                          {/* <p className="mt-3 text-sm leading-5 text-blue-600">
                             + $20 / user / mo - first user
                           </p>
                           <p className="mt-3 text-sm leading-5 text-blue-600">
                             + $17 / user / mo - each user after
-                          </p>
+                          </p> */}
                           <p className="px-8 mt-3 text-xs leading-5 text-gray-700">
                             *Monthly payment varies dependent on the number of
                             members on the same plan.
