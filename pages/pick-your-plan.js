@@ -130,7 +130,7 @@ export default function PickYourPlan() {
                       </p>
                       <button
                         type="button"
-                        className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                        className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
                       >
                         Select Membership
                       </button>
@@ -220,7 +220,7 @@ export default function PickYourPlan() {
                           </p>
                           <button
                             type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
                           >
                             Select Membership
                           </button>
@@ -255,7 +255,7 @@ export default function PickYourPlan() {
                           </p>
                           <button
                             type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
                           >
                             Select Membership
                           </button>
@@ -351,7 +351,7 @@ export default function PickYourPlan() {
                           </p>
                           <button
                             type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
                           >
                             Select Membership
                           </button>
@@ -386,7 +386,7 @@ export default function PickYourPlan() {
                           </p>
                           <button
                             type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
                           >
                             Select Membership
                           </button>
@@ -554,7 +554,7 @@ export default function PickYourPlan() {
 
               <button
                 type="button"
-                className="mt-8 px-12 bg-green-600 border border-transparent rounded-full py-4 text-md leading-5 font-semibold text-white hover:bg-purple-500 focus:outline-none focus:border-purple-700 focus:shadow-outline-purple active:bg-purple-700 transition duration-150 ease-in-out"
+                className="mt-8 px-12 bg-green-600 border border-transparent rounded-full py-4 text-md leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
               >
                 View More Savings
               </button>

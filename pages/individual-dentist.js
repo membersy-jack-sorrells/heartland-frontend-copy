@@ -413,7 +413,7 @@ export default function IndividualDentist() {
                               <span className="text-4xl leading-10 font-extrabold text-blue-600">$79</span>
                               <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                             </p>
-                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">Select Membership</button>
+                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out">Select Membership</button>
                           </div>
                         </td>
 
@@ -428,7 +428,7 @@ export default function IndividualDentist() {
                               <span className="text-4xl leading-10 font-extrabold text-blue-600">$159</span>
                               <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                             </p>
-                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">Select Membership</button>
+                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out">Select Membership</button>
                           </div>
                         </td>
 
@@ -443,7 +443,7 @@ export default function IndividualDentist() {
                               <span className="text-4xl leading-10 font-extrabold text-blue-600">$299</span>
                               <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                             </p>
-                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">Select Membership</button>
+                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out">Select Membership</button>
                           </div>
                         </td>
                         <td className="w-1/16">

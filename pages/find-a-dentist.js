@@ -37,7 +37,7 @@ const ListItem = (props) => (
               <div className="text-sm leading-5 text-gray-900">
                 <button 
                   type="button" 
-                  class="inline-flex items-center px-1 py-1 border border-transparent text-xs leading-5 font-medium rounded-full text-white bg-green-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
+                  class="inline-flex items-center px-1 py-1 border border-transparent text-xs leading-5 font-medium rounded-full text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition ease-in-out duration-150"
                 >
                   <Link href="/individual-dentist">
                     <a>More Details</a>
@@ -59,6 +59,8 @@ const MapMarker = ({ text }) => (
   );
 
 export default function FindADentist() {
+  const [zipQuery, setZipQuery] = useState();
+  const [nameQuery, setNameQuery] = useState();
   const [isChecked, setIsChecked] = useState(false);
   const [mapCenter, setMapCenter] = useState({ lat: 27.6100487, lng: -83.0007337 });
   const [mapZoom, setMapZoom] = useState(7);
@@ -78,6 +80,14 @@ export default function FindADentist() {
     setMapZoom(17);
   }
 
+  const handleClearSearches = () => {
+    setMapCenter(defaultMapCenter);
+    setActiveOffices(offices);
+    setNumOffices(offices.length);
+    setZipQuery('');
+    setNameQuery('');
+  }
+
   const filterOfficeZip = (query) => {
     return offices.filter((office) => 
       office.zip.toString().indexOf(query.toString()) > -1
@@ -94,6 +104,7 @@ export default function FindADentist() {
     setActiveOffices(filteredZipOffices);
     setNumOffices(filteredZipOffices.length);
     console.log('zipFilteredOffices -> ', filteredZipOffices);
+    setZipQuery(event.target.value);
   }
 
   const filterOfficeNames = (query) => {
@@ -109,6 +120,7 @@ export default function FindADentist() {
     const filteredOffices = filterOfficeNames(event.target.value);
     setActiveOffices(filteredOffices);
     setNumOffices(filteredOffices.length);
+    setNameQuery(event.target.value);
   }
 
   const handleListItemClick = (office) => {
@@ -171,6 +183,7 @@ export default function FindADentist() {
                         id="zipCode"
                         className="form-input block w-full sm:text-sm sm:leading-5"
                         placeholder="Zip Code"
+                        value={zipQuery}
                         onChange={event => handleZipChange(event)}
                       />
                     </div>
@@ -184,6 +197,7 @@ export default function FindADentist() {
                         id="officeName"
                         className="form-input block w-full sm:text-sm sm:leading-5"
                         placeholder="Office Name"
+                        value={nameQuery}
                         onChange={event => handleNameChange(event)}
                       />
                     </div>
@@ -193,9 +207,9 @@ export default function FindADentist() {
                     <button
                       type="button"
                       className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition ease-in-out duration-150"
-                      onClick={handleChangeCenter}
+                      onClick={handleClearSearches}
                     >
-                      Search
+                      Clear
                     </button>
                   </span>
                 </div>
