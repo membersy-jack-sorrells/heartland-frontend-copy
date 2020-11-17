@@ -395,14 +395,33 @@ export default function IndexPage() {
         {/* call to action */}
         <div className="bg-white">
           <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 py-16">
-            <div className="rounded-lg shadow-xl overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4 bg-no-repeat bg-cover" style={{ backgroundImage: "url(https://res.cloudinary.com/membersy/image/upload/v1603913703/vantageone/home/cta-background.png)"}}>
+            <div className="rounded-lg shadow-xl overflow-hidden bg-no-repeat bg-cover" style={{ backgroundImage: "url(https://res.cloudinary.com/membersy/image/upload/v1603913703/vantageone/home/cta-background.png)"}}>
               <div className="pt-10 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20">
-                <div className="lg:self-center">
-                  <h2 className="text-3xl leading-9 font-extrabold text-white sm:text-4xl sm:leading-10">
-                    <span className="block">Need more information?</span>
+                <div className="lg:self-center text-center">
+                  <h2 className="text-3xl leading-9 font-extrabold text-white sm:text-4xl sm:leading-10 lg:text-5xl">
+                    <span className="block">Questions?</span>
                   </h2>
-                  <p className="mt-4 text-lg leading-6 text-white">We should put some more content here.</p>
-                  <p className="mt-4 text-lg leading-6 text-white">You should give us a call.</p>
+                  <p className="mt-8 text-lg leading-6 text-white">Visit our FAQ's page or contact us for additional support needs.</p>
+                  <div className="flex flex-row justify-center gap-8 py-8 text-white">
+                    <div>
+                      <Link href="/faq" passHref>
+                        <a className="flex flex-col">
+                          <span>BELL ICON</span>
+                          <span>
+                            FAQ
+                          </span>
+                        </a>
+                      </Link>
+                    </div>
+                    <div>
+                      <Link href="/support" passHref>
+                        <a className="flex flex-col">
+                          <span>MAIL ICON</span>
+                          <span>Email</span>
+                        </a>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
