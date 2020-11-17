@@ -19,10 +19,6 @@ export default function JoinNow() {
 
 
 
-
-
-
-
   const [plan, setPlan] = useState(router.query.plan ? preselectPlan[0] : planData[0]);
   const [enrollmentOffice, setEnrollmentOffice] = useState({ id: '', name: '' });
   const [addDependents, setAddDependents] = useState(0);

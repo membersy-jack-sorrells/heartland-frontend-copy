@@ -137,90 +137,6 @@ export default function IndexPage() {
 
 
 
-        {/* <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 h-4/5 lg:min-h-full 3xl:h-2/3 pb-20 pt-20 sm:text-center md:text-left lg:text-left">
-          <h2 className="text-4xl tracking-tight leading-10 font-extrabold text-white sm:text-5xl sm:leading-none md:text-6xl lg:pt-12 3xl:py-24">
-            Your smile.
-            <br />
-            Your choice.
-          </h2>
-          <p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-            VantageOne Dental Savings Plan members experience a different
-            approach to traditional and outdated dental insurance. All members
-            receive INCREDIBLE SAVINGS on their dental care, tons of perks and
-            members-only exclusives - all starting on day one.{" "}
-            <a className="text-green-600" href="/join-now">
-              JOIN TODAY!
-            </a>
-          </p>
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-            <div className="rounded-md shadow">
-              <a
-                href="/"
-                className="w-full flex items-center justify-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
-              >
-                Join now
-              </a>
-            </div>
-            <div className="mt-3 sm:mt-0 sm:ml-3">
-              <a
-                href="/"
-                className="w-full flex items-center justify-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-teal-600 hover:text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
-              >
-                Learn more
-              </a>
-            </div>
-          </div>
-
-          <div className="pt-4 pb-32">
-            <div className="mt-2 flex rounded-full bg-white shadow-sm w-2/5 py-1 px-2 3xl:py-3 3xl:px-3 justify-between">
-              <div className="relative flex items-stretch focus-within:z-10 w-5/6">
-                <input id="email" className="form-input block w-full rounded-none rounded-l-full pl-10 transition ease-in-out duration-150 sm:text-md sm:leading-5 border-none" placeholder="Enter Your Zip Code" />
-              </div>
-              <button className="mr-1 relative inline-flex items-center px-4 py-2 border border-gray-300 text-md leading-5 font-medium rounded-full text-white bg-green-600 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
-                <span className="ml-2">Sort</span>
-              </button>
-            </div>
-          </div>
-
-
-
-
-
-          <div className="absolute inset-y-0 right-0 w-full h-full -z-10">
-            <Image
-              publicId="/vantageone/home/hero-background-3200x1600"
-              className="hidden 3xl:block h-auto w-full object-cover"
-            >
-              <Transformation width="auto" height="auto" />
-            </Image>
-            <Image
-              publicId="/vantageone/home/hero-background-1920x1080"
-              className="h-auto w-full object-cover hidden xl:block 3xl:hidden"
-            >
-              <Transformation width="auto" height="auto" />
-            </Image>
-            <Image
-              publicId="/vantageone/home/hero-background"
-              className="h-auto w-full object-cover sm:w-full md:w-full lg:w-full lg:h-auto"
-            />
-            <Image 
-              publicId="/vantageone/home/hero-background-500x805
-              className="h-auto w-full object-cover sm:w-full md:w-full lg:w-full lg:h-auto"
-            /> "
-          </div>
-        </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
         {/* membership features section */}
         <div className="py-32 bg-white 3xl:pb-64 3xl:py-24">
           <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 px-4 sm:px-6 lg:px-8">
@@ -357,7 +273,9 @@ export default function IndexPage() {
                   <div className="absolute top-0 flex flex-col items-center justify-center h-full w-full text-center py-8 px-4 3xl:py-28">
                     <Image 
                       publicId="vantageone/home/money-sun-icon.png" 
-                      className="inline-flex" 
+                      className="inline-flex"
+                      height="50"
+                      width="50"
                     />
                     <h3 className="mt-6 text-3xl leading-7 font-semibold text-blue-600 3xl:text-4xl 3xl:py-4">
                       Save and Smile

@@ -31,6 +31,20 @@ export const planData = [
   }
 ]
 
+export const officesDropdownSubset = [
+    { "value": "familyDentalAtAlafayaCrossings", "label": "Family Dental at Alafaya Crossings", },
+    { "value": "familyDentalAtLakesideVillage", "label": "Family Dental at Lakeside Village" },
+    { "value": "familyDentalAtWildlight", "label": "Family Dental at Wildlight" },
+    { "value": "familyDentalCareOfSouthBradenton", "label": "Family Dental Care of South Bradenton" },
+    { "value": "familyDentalOfFortMyers", "label": "Family Dental of Fort Myers" },
+    { "value": "familyDentistryAtSouthWood", "label": "Family Dentistry at SouthWood" },
+    { "value": "familyDentistryOfLargo", "label": "Family Dentistry of Largo" },
+    { "value": "FamilyOralHealthAssociates", "label": "Family Oral Health Associates", },
+    { "value": "firstImpressionsSmileCenter", "label": "First Impressions Smile Center" },
+    { "value": "fortHamerDentalCare", "label": "Fort Hamer Dental Care" }
+]
+
+
 export const officesDropdown = [
   { value: "familyDentalAtAlafayaCrossingsOviedo", label: "Family Dental at Alafaya Crossings, Oviedo" }, 
   { value: "familyDentalLakesideVillageLakeland", label: "Family Dental at Lakeside Village, Lakeland" }, 

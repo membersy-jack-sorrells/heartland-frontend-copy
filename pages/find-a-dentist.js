@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Image } from 'cloudinary-react';
 import Head from 'next/head';
@@ -6,6 +6,7 @@ import GoogleMapReact from "google-map-react";
 import { Layout } from "../components/layout/layout";
 import { Toggle } from "../components/toggle";
 import { offices } from '../data/find-a-dentist';
+import { useInput } from '../hooks/useInput';
 
 
 const ListItem = (props) => (
@@ -57,18 +58,14 @@ const MapMarker = ({ id, selectedOffice }) => (
     <Image 
       publicId="vantageone/icons/map-marker-solid"
       className={`transform transition ease-in-out duration-500   ${ id === selectedOffice.name ? 'w-8' : 'w-4' }`}
-      // className={ id === selectedOffice.name ? "w-8" : "w-4" }
-      //height={id === selectedOffice.id ? '30' : '15'} 
-      //width={id === selectedOffice.id ? '30' : '15'} 
     />
   </div>  
   );
 
 export default function FindADentist() {
   const [showMap, setShowMap] = useState(true);
-  const [zipQuery, setZipQuery] = useState();
-  const [nameQuery, setNameQuery] = useState();
-  const [isChecked, setIsChecked] = useState(false);
+  const [zipInput, bindZipInput, resetZipInput] = useInput('');
+  const [nameInput, bindNameInput, resetNameInput] = useInput('');
   const [mapCenter, setMapCenter] = useState({ lat: 27.6100487, lng: -83.0007337 });
   const [mapZoom, setMapZoom] = useState(7);
   const [numOffices, setNumOffices] = useState(offices.length);
@@ -86,44 +83,21 @@ export default function FindADentist() {
     setMapCenter(defaultMapCenter);
     setActiveOffices(offices);
     setNumOffices(offices.length);
-    setZipQuery('');
-    setNameQuery('');
+    resetZipInput();
+    resetNameInput();
   }
 
-  const filterOfficeZip = (query) => {
-    return offices.filter((office) => 
-      office.zip.toString().indexOf(query.toString()) > -1
-    );
-  }
-
-  const handleZipChange = (event) => {
-    console.log('handle zip code change ');
-    console.log('zip event -> ', event);
-    console.log('zip event.target -> ', event.target);
-    console.log('zip event.target.value -> ', event.target.value);
-
-    const filteredZipOffices = filterOfficeZip(event.target.value);
+  useEffect(() => {
+    const filteredZipOffices = offices.filter((office) => office.zip.toString().indexOf(zipInput.toString()) > -1);
     setActiveOffices(filteredZipOffices);
     setNumOffices(filteredZipOffices.length);
-    console.log('zipFilteredOffices -> ', filteredZipOffices);
-    setZipQuery(event.target.value);
-  }
+  }, [zipInput])
 
-  const filterOfficeNames = (query) => {
-    return offices.filter((office) => 
-      office.name.toLowerCase().indexOf(query.toLowerCase()) > -1
-    );
-  }
-
-  const handleNameChange = (event) => {
-    console.log('handle name change');
-    console.log('event.target.value -> ', event.target.value);
-
-    const filteredOffices = filterOfficeNames(event.target.value);
+  useEffect(() => {
+    const filteredOffices = offices.filter((office) => office.name.toLowerCase().indexOf(nameInput.toLowerCase()) > -1);
     setActiveOffices(filteredOffices);
     setNumOffices(filteredOffices.length);
-    setNameQuery(event.target.value);
-  }
+  }, [nameInput]);
 
   const handleListItemClick = (office) => {
     console.log('handle list item click');
@@ -188,8 +162,7 @@ export default function FindADentist() {
                         id="zipCode"
                         className="form-input block w-full sm:text-sm sm:leading-5"
                         placeholder="Zip Code"
-                        value={zipQuery}
-                        onChange={event => handleZipChange(event)}
+                        {...bindZipInput}
                       />
                     </div>
                   </div>
@@ -202,8 +175,7 @@ export default function FindADentist() {
                         id="officeName"
                         className="form-input block w-full sm:text-sm sm:leading-5"
                         placeholder="Office Name"
-                        value={nameQuery}
-                        onChange={event => handleNameChange(event)}
+                        {...bindNameInput}
                       />
                     </div>
                   </div>
