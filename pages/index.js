@@ -232,8 +232,8 @@ export default function IndexPage() {
                     <Image publicId={item.iconHref} />
                   </div>
                   <div className="mt-5">
-                    <h5 className="py-2 text-2xl leading-6 font-bold text-blue-600 3xl:text-4xl 3xl:font-semibold 3xl:py-4">{item.title}</h5>
-                    <p className="mt-2 text-lg leading-6 text-gray-500 3xl:text-2xl ">
+                    <h5 className="py-2 text-2xl leading-6 font-bold text-blue-600 4xl:text-4xl 3xl:font-semibold 3xl:py-4">{item.title}</h5>
+                    <p className="mt-2 text-lg leading-6 text-gray-500 4xl:text-2xl ">
                       {item.text}
                     </p>
                   </div>
@@ -250,7 +250,7 @@ export default function IndexPage() {
         {/* how it works section */}
         
 
-        <section className="relative bg-blue-600 lg:bg-transparent lg:pb-1/16" id="learnMore">
+        <section className="relative bg-blue-600 lg:bg-transparent lg:pb-1/16 3xl:pb-2/16 " id="learnMore">
           <div className="relative hidden 3xl:block pb-5/16">
             <Image 
               publicId="/vantageone/backgrounds/home-midpage-hero-background-5x16" 
@@ -269,11 +269,11 @@ export default function IndexPage() {
 
 
 
-              <div className="w-3/5 2xl:w-7/16 lg:ml-auto 3xl:mx-auto lg:pt-20 3xl:pt-32 pb-12">
-                <h2 className="text-4xl leading-9 tracking-wider font-extrabold text-white sm:text-6xl sm:leading-10 3xl:text-8xl">
+              <div className="w-3/5 2xl:w-7/16 lg:ml-auto 3xl:mx-auto lg:pt-20 4xl:pt-32 pb-12">
+                <h2 className="text-4xl leading-9 tracking-wider font-extrabold text-white sm:text-6xl sm:leading-10 4xl:text-8xl">
                   How It Works
                 </h2>
-                <p className="py-2 3xl:py-4 mt-3 text-xl tracking-wide leading-7 text-teal-600 sm:mt-4 3xl:text-2xl 3xl:leading-9 3xl:py-12">
+                <p className="py-2 3xl:py-4 mt-3 text-xl tracking-wide leading-7 text-teal-600 sm:mt-4 3xl:text-2xl 4xl:leading-9 4xl:py-12">
                   VantageOne Dental Savings Plan provides you and your family with access to quality dental care at an affordable price. It enables you to get the services you need, exactly when you need them.
                 </p>
                 <span className="inline-flex rounded-md py-4">
@@ -288,7 +288,7 @@ export default function IndexPage() {
               </div>
 
 
-              <div className="grid lg:grid-cols-3 gap-8 3xl:gap-32">
+              <div className="grid lg:grid-cols-3 gap-8 4xl:gap-56">
 
                 <div className="w-5/6 mx-auto lg:w-full relative shadow-md rounded-md">
                   <div className="relative pb-full">
@@ -332,6 +332,8 @@ export default function IndexPage() {
                     <Image 
                       publicId="vantageone/home/check-list-icon.png" 
                       className="inline-flex" 
+                      height="50"
+                      width="50"
                     />
                     <h3 className="mt-6 text-3xl leading-7 font-semibold text-white 3xl:text-4xl 3xl:py-4">
                       Select Membership

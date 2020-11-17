@@ -43,7 +43,8 @@ module.exports = {
       },
       screens: {
         '2xl': '1440px',
-        '3xl': '1920px'
+        '3xl': '1920px',
+        '4xl': '2400px'
       },
       // colors: {
       //   "dark-blue": "#2c519d",

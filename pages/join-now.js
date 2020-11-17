@@ -401,7 +401,7 @@ export default function JoinNow() {
                   )}
                   {annualBilling === 'monthly' && (
                     <>
-                      <span>Initial payment</span>
+                      <span>Upfront cost</span>
                       <div className="flex justify-between pb-2">
                         <span>{plan.name}:</span>
                         <span>${plan.monthlyInitialPayment}</span>

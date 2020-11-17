@@ -11,7 +11,7 @@ export const Header = () => {
   const router = useRouter();
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white sticky top-0 z-20 border-b border-gray-200">
       <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">

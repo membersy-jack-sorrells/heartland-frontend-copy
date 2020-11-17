@@ -65,6 +65,7 @@ const MapMarker = ({ id, selectedOffice }) => (
   );
 
 export default function FindADentist() {
+  const [showMap, setShowMap] = useState(true);
   const [zipQuery, setZipQuery] = useState();
   const [nameQuery, setNameQuery] = useState();
   const [isChecked, setIsChecked] = useState(false);
@@ -168,7 +169,10 @@ export default function FindADentist() {
       <div className="pb-20 mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5">
 
         <div className="bg-white overflow-hidden shadow-md sm:rounded-lg">
-          <div className="px-4 py-5 sm:p-6 grid grid-cols-2 gap-6">
+          <div className={`px-4 py-5 sm:p-6 gap-6 grid ${showMap ? 'grid-cols-2': 'grid-cols-1'}`}>
+
+
+
             {/* List of Offices */}
             <div className="flex flex-col">
 
@@ -244,7 +248,8 @@ export default function FindADentist() {
                   </span>
 
                   <div className="flex items-center">
-                    <Toggle isChecked={isChecked} setIsChecked={setIsChecked} />
+                    <span className="text-blue-600 text-sm pr-2">{showMap ? 'Hide map' : 'Show map'}</span>
+                    <Toggle isChecked={showMap} setIsChecked={setShowMap} />
                   </div>
                 </div>
               </div>
@@ -268,35 +273,32 @@ export default function FindADentist() {
               </div>
             </div>
 
+
+
             {/* Google Map */}
-            <div style={{ height: "100%", width: "100%" }}>
-              <GoogleMapReact
-                bootstrapURLKeys={{ key: "AIzaSyD_bBaGS6Hk_QgBQQxIwa8td2eU9sbOUtA" }}
-                defaultCenter={defaultMapCenter}
-                center={mapCenter}
-                defaultZoom={ 7 }
-                zoom={mapZoom}
-              >
+            {showMap && (
+              <div style={{ height: "100%", width: "100%" }}>
+                <GoogleMapReact
+                  bootstrapURLKeys={{ key: "AIzaSyD_bBaGS6Hk_QgBQQxIwa8td2eU9sbOUtA" }}
+                  defaultCenter={defaultMapCenter}
+                  center={mapCenter}
+                  defaultZoom={ 7 }
+                  zoom={mapZoom}
+                >
 
-                {activeOffices.map(office => (
-                  <MapMarker 
-                    lat={office.lat}
-                    lng={office.lng}
-                    key={office.name}
-                    id={office.name}
-                    selectedOffice={selectedOffice}
-                  />
-                ))}
-
-
-
-                {/* <AnyReactComponent
-                  lat={mapCenter.lat}
-                  lng={mapCenter.lng}
-                  text="Membersy Office"
-                />   */}
-              </GoogleMapReact>
-            </div>
+                  {activeOffices.map(office => (
+                    <MapMarker 
+                      lat={office.lat}
+                      lng={office.lng}
+                      key={office.name}
+                      id={office.name}
+                      selectedOffice={selectedOffice}
+                    />
+                  ))}
+                </GoogleMapReact>
+              </div>
+            )}
+            
           </div>
         </div>
       </div>
