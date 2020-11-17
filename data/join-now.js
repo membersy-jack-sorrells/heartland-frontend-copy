@@ -15,6 +15,8 @@ export const planData = [
     name: 'Premium Plan',
     annualPrice: 159,
     annualDependentPrice: 149,
+    monthlyInitialPayment: 79,
+    monthlyInitialDependentPayment: 70,
     monthlyPrice: 8,
     monthlyDependentPrice: 6
   }, {
@@ -22,6 +24,8 @@ export const planData = [
     name: 'Premium + Plan',
     annualPrice: 299,
     annualDependentPrice: 270,
+    monthlyInitialPayment: 79,
+    monthlyInitialDependentPayment: 70,
     monthlyPrice: 20,
     monthlyDependentPrice: 17
   }

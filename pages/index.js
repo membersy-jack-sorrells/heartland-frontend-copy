@@ -69,17 +69,18 @@ export default function IndexPage() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex justify-center sm:justify-start 3xl:pb-12">
                 <div className="rounded-md shadow">
-                  <a
-                    href="/"
-                    className="w-full flex items-center justify-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10 3xl:text-xl"
-                  >
-                    Join now
-                  </a>
+                  <Link href="/join-now">
+                    <a
+                      className="w-full flex items-center justify-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10 3xl:text-xl"
+                    >
+                      Join now
+                    </a>
+                  </Link>
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-3">
                   <a
-                    href="/"
-                    className="w-full flex items-center justify-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-teal-600 hover:text-white hover:bg-blue-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10 3xl:text-xl"
+                    href="#learnMore"
+                    className="w-full flex items-center justify-center px-10 py-3 border border-transparent text-base leading-6 font-medium rounded-full text-white bg-teal-600 hover:text-white hover:bg-teal-500 focus:outline-none focus:shadow-outline-teal focus:border-teal-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10 3xl:text-xl"
                   >
                     Learn more
                   </a>
@@ -100,7 +101,7 @@ export default function IndexPage() {
                     className="mr-1 relative inline-flex items-center px-4 py-2 border border-gray-300 text-md leading-5 font-medium rounded-full text-white bg-green-600 hover:text-gray-500 hover:bg-white focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
                   >
                     <span className="ml-2">
-                      Sort
+                      Find A Participating Office
                     </span>
                   </button>
                 </div>
@@ -249,7 +250,7 @@ export default function IndexPage() {
         {/* how it works section */}
         
 
-        <section className="relative bg-blue-600 lg:bg-transparent lg:pb-1/16">
+        <section className="relative bg-blue-600 lg:bg-transparent lg:pb-1/16" id="learnMore">
           <div className="relative hidden 3xl:block pb-5/16">
             <Image 
               publicId="/vantageone/backgrounds/home-midpage-hero-background-5x16" 
@@ -264,11 +265,11 @@ export default function IndexPage() {
           </div>
 
           <div className=" lg:absolute top-0 w-full">
-            <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5">
+            <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/4">
 
 
 
-              <div className="w-3/5 2x:w-1/2 lg:ml-auto 3xl:mx-auto lg:pt-20 3xl:pt-32 pb-12">
+              <div className="w-3/5 2xl:w-7/16 lg:ml-auto 3xl:mx-auto lg:pt-20 3xl:pt-32 pb-12">
                 <h2 className="text-4xl leading-9 tracking-wider font-extrabold text-white sm:text-6xl sm:leading-10 3xl:text-8xl">
                   How It Works
                 </h2>
@@ -299,17 +300,19 @@ export default function IndexPage() {
                     </Image>
                   </div>
 
-                  <div className="absolute top-0 w-full text-center py-8 px-4 3xl:py-28">
+                  <div className="absolute top-0 flex flex-col items-center justify-center h-full w-full text-center py-8 px-4 3xl:py-28">
                     <Image 
                       publicId="vantageone/home/map-marker-icon.png" 
-                      className="inline-flex" 
+                      className="inline-flex"
+                      height="50"
+                      width="50"
                     />
                     <h3 className="mt-6 text-3xl leading-7 font-semibold text-blue-600 3xl:text-4xl 3xl:py-4">
                       <Link href="/find-a-dentist">
                         <a>Pick Your Office</a>
                       </Link>
                     </h3>
-                    <p className="mt-6 text-xl tracking-wide leading-8 text-gray-500 3xl:px-24">
+                    <p className="mt-6 text-xl tracking-wide leading-8 text-gray-500 3xl:px-8">
                       Use Your membership right away at a growing community of XX+ VantageOne participating offices located across Florida.
                     </p>
                   </div>
@@ -325,7 +328,7 @@ export default function IndexPage() {
                     </Image>
                   </div>
 
-                  <div className="absolute top-0 w-full text-center py-8 px-4 3xl:py-28">
+                  <div className="absolute top-0 flex flex-col items-center justify-center h-full w-full text-center py-8 px-4 3xl:py-28">
                     <Image 
                       publicId="vantageone/home/check-list-icon.png" 
                       className="inline-flex" 
@@ -333,7 +336,7 @@ export default function IndexPage() {
                     <h3 className="mt-6 text-3xl leading-7 font-semibold text-white 3xl:text-4xl 3xl:py-4">
                       Select Membership
                     </h3>
-                    <p className="mt-6 text-xl tracking-wide leading-8 text-gray-500 3xl:px-24">
+                    <p className="mt-6 text-xl tracking-wide leading-8 text-gray-500 3xl:px-8">
                       Whether you need a membership for just you or the entire family, we've got options. Simply select the plan type that works best for you.
                     </p>
                   </div>
@@ -349,7 +352,7 @@ export default function IndexPage() {
                     </Image>
                   </div>
 
-                  <div className="absolute top-0 w-full text-center py-8 px-4 3xl:py-28">
+                  <div className="absolute top-0 flex flex-col items-center justify-center h-full w-full text-center py-8 px-4 3xl:py-28">
                     <Image 
                       publicId="vantageone/home/money-sun-icon.png" 
                       className="inline-flex" 
@@ -357,7 +360,7 @@ export default function IndexPage() {
                     <h3 className="mt-6 text-3xl leading-7 font-semibold text-blue-600 3xl:text-4xl 3xl:py-4">
                       Save and Smile
                     </h3>
-                    <p className="mt-6 text-xl tracking-wide leading-8 text-gray-500 3xl:px-24">
+                    <p className="mt-6 text-xl tracking-wide leading-8 text-gray-500 3xl:px-8">
                       Your annual membership grants you immeadiate access to discounts on your dental care including up to 50% off most services.
                     </p>
                   </div>

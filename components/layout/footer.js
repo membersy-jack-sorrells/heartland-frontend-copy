@@ -1,4 +1,5 @@
 import React from "react";
+import Link from 'next/link';
 import { Image } from "cloudinary-react";
 import { footerNavigation } from "../../data/footer";
 
@@ -24,12 +25,12 @@ export const Footer = () => {
               </div>
               <div className="flex flex-col justify-between px-4 lg:w-1/6 md:w-1/6 sm:w-full w-full">
                 {footerNavigation.map(({ title, href }) => (
-                  <a href={href}>{title}</a>
+                  <Link href={href} key={title}><a>{title}</a></Link>
                 ))}
               </div>
               <div className="pl-4 lg:w-3/6 md:w-3/6 sm:w-full w-full">
                 <p className="text-xs">
-                  Perfect Teeth Dental Plan is NOT INSURANCE, but rather a
+                  VantageOne Dental Savings Plan is NOT INSURANCE, but rather a
                   licensed dental savings plan offered through your local dental
                   office. Members in good standing with their annual membership
                   fee are eligible to receive transparent, member-only discounts

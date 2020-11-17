@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { Layout } from "../components/layout/layout";
 import { NativeSelect } from '../components/nativeSelect';
 import { SearchSelect } from '../components/searchSelect';
@@ -7,11 +8,26 @@ import { Toggle } from '../components/toggle';
 import { planDropdown, planData, dependentsDropdown, officesDropdown } from '../data/join-now';
 
 export default function JoinNow() {
-  const [plan, setPlan] = useState(planData[0]);
+  const router = useRouter();
+
+  console.log('router -> ', router);
+  let preselectPlan;
+  if (router.query.plan) {
+    preselectPlan = planData.filter(plan => plan.id === router.query.plan);
+  }
+  console.log('preselectPlan -> ', preselectPlan);
+
+
+
+
+
+
+
+  const [plan, setPlan] = useState(router.query.plan ? preselectPlan[0] : planData[0]);
   const [enrollmentOffice, setEnrollmentOffice] = useState({ id: '', name: '' });
   const [addDependents, setAddDependents] = useState(0);
   const [dependentsInput, setDependentsInput] = useState([]);
-  const [annualBilling, setAnnualBilling] = useState(true); 
+  const [annualBilling, setAnnualBilling] = useState(router.query.billingFrequency ? router.query.billingFrequency : 'annual'); 
 
 
   function handleDependentSelect(event) {
@@ -21,7 +37,7 @@ export default function JoinNow() {
     let dependentsToAdd = [];
     for (let i = 0; i < event.target.value; i++) {
       dependentsToAdd.push(
-        <>
+        <React.Fragment key={`dependent${i}`}>
           <div className="sm:col-span-3">
             <label for="first_name" className="block text-sm font-medium leading-5 text-gray-700">
               First name
@@ -39,7 +55,7 @@ export default function JoinNow() {
               <input id="last_name" className="form-input block w-full transition duration-150 ease-in-out sm:text-sm sm:leading-5" />
               </div>
           </div>
-        </>
+        </React.Fragment>
       )
     }
 
@@ -58,8 +74,17 @@ export default function JoinNow() {
     setPlan(selectedPlan[0]);
     if(selectedPlan[0].id === 'classic') {
       console.log('test');
-      setAnnualBilling(true);
+      setAnnualBilling('annual');
     }
+  }
+
+  function handleBillingChange(event) {
+    console.log('event -> ', event);
+    console.log('event.target.value -> ', event.target.value);
+
+
+    setAnnualBilling(event.target.value);
+
   }
 
  
@@ -128,31 +153,44 @@ export default function JoinNow() {
                 </div>
               </div>
 
-              {plan.id !== 'classic' && (
-                <div class="flex items-center justify-between py-2">
-                  <span class="flex-grow flex flex-col" id="toggleLabel">
-                    <span class="text-sm leading-5 font-medium text-black">
-                      Select Annual or Monthly Billing
-                    </span>
-                    <span class="text-sm leading-normal text-gray-500">
-                      Save up to 10% with annual billing.
-                    </span>
-                  </span>
-
-                  <Toggle isChecked={annualBilling} setIsChecked={setAnnualBilling} />
+              <fieldset class="mt-6">
+                <legend class="text-base font-medium text-gray-900">
+                  Billing Frequency
+                </legend>
+                <div class="mt-4">
+                  <div class="flex items-center">
+                    <input 
+                      id="annual" 
+                      name="billingFrequency" 
+                      type="radio" 
+                      class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out"
+                      value="annual"
+                      checked={annualBilling === 'annual'}
+                      onChange={event => handleBillingChange(event)}
+                    />
+                    <label for="annual" class="ml-3">
+                      <span class="block text-sm leading-5 font-medium text-gray-700">Annual</span>
+                    </label>
+                  </div>
+                  {plan.id !== 'classic' && (
+                    <div class="mt-4 flex items-center">
+                      <input 
+                        id="monthly" 
+                        name="billingFrequency" 
+                        type="radio" 
+                        class="form-radio h-4 w-4 text-blue-600 transition duration-150 ease-in-out"
+                        value="monthly"
+                        checked={annualBilling === 'monthly'}
+                        onChange={event => handleBillingChange(event)}
+                      />
+                      <label for="monthly" class="ml-3">
+                        <span class="block text-sm leading-5 font-medium text-gray-700">Monthly</span>
+                      </label>
+                    </div>
+                  )}
                 </div>
-              )}
-              {plan.id === 'classic' && (
-                <div class="flex items-center justify-between py-2">
-                  <span className="text-gray-500">
-                    The Classic plan is only available in annal pricing.
-                  </span>
-
-                </div>
-              )}
+              </fieldset>
               
-
-
 
               <div className="mt-8 border-t border-gray-200 pt-8">
                 <div>
@@ -330,24 +368,6 @@ export default function JoinNow() {
                 </div>
               </div>
             </div>
-
-            
-            <div className="mt-8 border-t border-gray-200 pt-5">
-              <div className="flex justify-end">
-                <span className="inline-flex rounded-md shadow-sm">
-                  <button type="button" className="py-2 px-4 border border-gray-300 rounded-md text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition duration-150 ease-in-out">
-                    Cancel
-                  </button>
-                </span>
-                <span className="ml-3 inline-flex rounded-md shadow-sm">
-                  <button type="submit" className="inline-flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition duration-150 ease-in-out">
-                    Save
-                  </button>
-                </span>
-              </div>
-            </div>
-
-
             
           </form>
 
@@ -358,38 +378,72 @@ export default function JoinNow() {
                 <div className="px-4 py-5 sm:p-6">
                   <div className="text-center pb-8 flex flex-col">
                     <h1 className="text-2xl pb-4">Receipt</h1>
-                    <span>{ annualBilling ? "Billed Annually" : "Billed Monthly" }</span>
+                    <span>{ annualBilling === 'annual' ? "Billed Annually" : "Billed Monthly" }</span>
                     <span>Plan: {plan.name}</span>
-                    <div className="flex justify-between pt-8">
-                      <span>{plan.name}:</span>
-                      <span>${annualBilling ? plan.annualPrice : plan.monthlyPrice}</span>
-                    </div>
                   </div>
-                  {annualBilling && (
-                    <div className="divide-y divide-grey-400">
-                      <div className="flex justify-between pb-8">
-                        <span>{addDependents} dependent(s) @ ${plan.annualDependentPrice}:</span>
-                        <span>${addDependents * plan.annualDependentPrice}</span>
+                  {annualBilling === 'annual' && (
+                    <>
+                      <div className="flex justify-between pb-4">
+                        <span>{plan.name}:</span>
+                        <span>${plan.annualPrice}</span>
                       </div>
-
-                      <div className="flex justify-between py-8">
-                        <span>Total: </span>
-                        <span>${(plan.annualPrice + (addDependents * plan.annualDependentPrice))}</span>
+                      <div className="divide-y divide-grey-400">
+                        <div className="flex justify-between pb-8">
+                          <span>{addDependents} dependent(s) @ ${plan.annualDependentPrice}:</span>
+                          <span>${addDependents * plan.annualDependentPrice}</span>
+                        </div>
+                        <div className="flex justify-between py-8">
+                          <span>Total: </span>
+                          <span>${(plan.annualPrice + (addDependents * plan.annualDependentPrice))}</span>
+                        </div>
                       </div>
-                    </div>
+                    </>
                   )}
-                  {!annualBilling && (
-                    <div className="divide-y divide-grey-400">
-                      <div className="flex justify-between pb-8">
-                        <span>{addDependents} dependent(s) @ ${plan.monthlyDependentPrice}:</span>
-                        <span>${addDependents * plan.monthlyDependentPrice}</span>
+                  {annualBilling === 'monthly' && (
+                    <>
+                      <span>Initial payment</span>
+                      <div className="flex justify-between pb-2">
+                        <span>{plan.name}:</span>
+                        <span>${plan.monthlyInitialPayment}</span>
+                      </div>
+                      <div className="divide-y divide-grey-400">
+                        <div className="flex justify-between pb-4">
+                          <span>{addDependents} dependent(s) @ ${plan.monthlyInitialDependentPayment}:</span>
+                          <span>${addDependents * plan.monthlyInitialDependentPayment}</span>
+                        </div>
+
+                        <div className="flex justify-between pt-2 pb-8">
+                          <span>Initial Total: </span>
+                          <span>${(plan.monthlyInitialPayment + (addDependents * plan.monthlyInitialDependentPayment))}</span>
+                        </div>
                       </div>
 
-                      <div className="flex justify-between py-8">
-                        <span>Total: </span>
-                        <span>${(plan.annualPrice + (addDependents * plan.monthlyDependentPrice))}</span>
+
+
+
+                      <span>Monthly Payment</span>
+                      <div className="flex justify-between pb-4">
+                        <span>{plan.name}:</span>
+                        <span>${plan.monthlyPrice}</span>
                       </div>
-                    </div>
+                      <div className="divide-y divide-grey-400">
+                        <div className="flex justify-between pb-4">
+                          <span>{addDependents} dependent(s) @ ${plan.monthlyDependentPrice}:</span>
+                          <span>${addDependents * plan.monthlyDependentPrice}</span>
+                        </div>
+
+
+
+
+
+
+                        <div className="flex justify-between pt-2 pb-8">
+                          <span>Total: </span>
+                          <span>${(plan.monthlyPrice + (addDependents * plan.monthlyDependentPrice))}</span>
+                        </div>
+                      </div>
+
+                    </>
                   )}
 
 

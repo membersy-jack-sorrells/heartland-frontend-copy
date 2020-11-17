@@ -68,8 +68,8 @@ export default function IndividualDentist() {
       </div>
 
 
-      <div className="mx-auto container">
-        <div className="max-w-7xl mx-auto grid grid-cols-3">
+      <div className="mx-auto">
+        <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 grid grid-cols-3 3xl:pb-12">
           <div className="pr-4 mx-auto z-10">
             <Image 
               publicId="vantageone/office-logo" 
@@ -124,18 +124,18 @@ export default function IndividualDentist() {
 
         </div>
 
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 sm:px-6 lg:px-8">
           <h2 className="text-blue-600 text-3xl py-4 ">Membership dentistry has arrived - become a member today!</h2>
           <p className="text-dark-gray text-xl pt-4 pb-12">We value your loyalty; for {office.name} patients without insurance, we’ve launched our dental membership plan to simplify how you pay for your dental care. For a low annual fee starting at <strong>$79</strong> per year, you’ll receive exclusive access to a wide range of discounts on most dental procedures.</p>
         </div>
 
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="sm:px-6 lg:px-8">
           
 
 
             
             <div className="bg-white">
-              <div className="max-w-screen-xl mx-auto bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 bg-white py-16 sm:py-24 sm:px-6 lg:px-8">
 
 
 
@@ -240,11 +240,18 @@ export default function IndividualDentist() {
                         <span className="text-4xl leading-10 font-extrabold text-blue-600">$159</span>
                         <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                       </p>
-                      <button 
-                        type="button" 
-                        className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">
-                          Select Membership
+                      <Link
+                        href={{
+                          pathname: '/join-now',
+                          query: { plan: 'premium' }
+                        }}
+                      >
+                        <button 
+                          type="button" 
+                          className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">
+                            Select Membership
                         </button>
+                      </Link>            
                     </div>
                   </div>
 
@@ -302,7 +309,19 @@ export default function IndividualDentist() {
                         <span className="text-4xl leading-10 font-extrabold text-blue-600">$299</span>
                         <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                       </p>
-                      <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out">Select Membership</button>
+                      <Link
+                        href={{
+                          pathname: '/join-now',
+                          query: { plan: 'premiumPlus' }
+                        }}
+                      >
+                        <button 
+                          type="button" 
+                          className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-gray-700 focus:outline-none focus:shadow-outline-gray transition duration-150 ease-in-out"
+                        >
+                          Select Membership
+                        </button>
+                      </Link>
                     </div>
                   </div>
 
@@ -394,11 +413,13 @@ export default function IndividualDentist() {
                           <div className="p-4 bg-gray-200 rounded-lg">
                             <h3 className="text-xl font-bold text-dark-gray">Membership Pricing</h3>
                             <p className="text-dark-gray py-2">With annual and monthly payment options available, saving on your dental care has never been easier.</p>
-                            <button
-                              className="text-white bg-green-600 rounded-full py-2 px-4"
-                            >
-                              View Full Pricing
-                            </button> 
+                            <Link href="/pick-your-plan">
+                              <button
+                                className="text-white bg-green-600 rounded-full py-2 px-4"
+                              >
+                                View Full Pricing
+                              </button> 
+                            </Link>
                           </div>
                         </th>
 
@@ -413,7 +434,17 @@ export default function IndividualDentist() {
                               <span className="text-4xl leading-10 font-extrabold text-blue-600">$79</span>
                               <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                             </p>
-                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out">Select Membership</button>
+                            <Link href={{
+                              pathname: '/join-now',
+                              query: { plan: 'classic' }
+                            }}>
+                              <button 
+                                type="button" 
+                                className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out"
+                              >
+                                Select Membership
+                              </button>
+                            </Link>
                           </div>
                         </td>
 
@@ -428,7 +459,19 @@ export default function IndividualDentist() {
                               <span className="text-4xl leading-10 font-extrabold text-blue-600">$159</span>
                               <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                             </p>
-                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out">Select Membership</button>
+                            <Link 
+                              href={{
+                                pathname: '/join-now',
+                                query: { plan: 'premium' }
+                              }}
+                            >
+                              <button 
+                                type="button" 
+                                className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out"
+                              >
+                                Select Membership
+                              </button>
+                            </Link>
                           </div>
                         </td>
 
@@ -443,7 +486,19 @@ export default function IndividualDentist() {
                               <span className="text-4xl leading-10 font-extrabold text-blue-600">$299</span>
                               <span className="text-base leading-6 font-medium text-gray-500">/yr</span>
                             </p>
-                            <button type="button" className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out">Select Membership</button>
+                            <Link 
+                              href={{
+                                pathname: '/join-now',
+                                query: { plan: 'premiumPlus' }
+                              }}
+                            >
+                              <button 
+                                type="button" 
+                                className="flex-grow w-3/4 bg-green-600 rounded-full 5 py-2 text-xs leading-5 font-semibold text-white hover:bg-green-400 focus:outline-none focus:shadow-outline-green transition duration-150 ease-in-out"
+                              >
+                                Select Membership
+                              </button>
+                            </Link>
                           </div>
                         </td>
                         <td className="w-1/16">
@@ -451,9 +506,7 @@ export default function IndividualDentist() {
                         </td>
                       </tr>
                     </thead>
-                    <tbody 
-                      // className="divide-y divide-gray-200"
-                    >
+                    <tbody>
                       <tr>
                         <th class="bg-blue-600 py-3 pl-6 rounded-t-full" colspan="5" scope="colgroup"></th>
                       </tr>
@@ -680,7 +733,7 @@ export default function IndividualDentist() {
 
         </div>
 
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 sm:px-6 lg:pb-24 lg:px-8">
           <p>If paying monthly, your account will be billed $79 per member, plus first month’s payment installment. Monthly, thereafter, you will be billed every 30 days  from the subscription’s original start date. Monthly option is only available for accounts paying with credit/debit card.</p>
         </div>
 

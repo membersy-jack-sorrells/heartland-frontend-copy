@@ -70,19 +70,19 @@ export default function FAQ() {
                 <dl className="space-y-12">
                   <div className="space-y-2">
                     <dt className="text-lg leading-6 font-medium text-gray-900">
-                      1. What is Perfect Teeth Dental Plan?
+                      1. What is VantageOne Dental Savings Plan?
                     </dt>
                     <dd className="text-base leading-6 text-gray-700">
-                      Perfect Teeth Dental Plan is NOT INSURANCE, but rather a
+                      VantageOne Dental Savings Plan is NOT INSURANCE, but rather a
                       licensed dental savings plan. Unlike traditional dental
-                      insurance that’s filled with red-tape, Perfect Teeth
+                      insurance that’s filled with red-tape, VantageOne
                       Dental Plan features no waiting periods, maximums,
                       exclusions, or claims process. In exchange for a low
                       annual membership fee starting at only $95.00 per year,
                       members will receive immediate access to free exams and
                       x-rays, free oral cancer screening, plus 20-60% off most
                       other dental services at a growing community of 60+
-                      Perfect Teeth locations across Arizona, Colorado, and New
+                      VantageOne locations across Arizona, Colorado, and New
                       Mexico.
                     </dd>
                   </div>
@@ -114,8 +114,8 @@ export default function FAQ() {
                       3. Which dental offices can I use my membership at?
                     </dt>
                     <dd className="text-base leading-6 text-gray-700">
-                      Perfect Teeth Dental Plan is accepted at a growing
-                      community of 60+ Perfect Teeth locations located across
+                      VantageOne Dental Savings Plan is accepted at a growing
+                      community of 60+ VantageOne locations located across
                       Arizona, Colorado, and New Mexico.
                       <br />A list of participating dental offices can be found{" "}
                       <Link href="/find-a-dentist">
@@ -131,7 +131,7 @@ export default function FAQ() {
                       4. How soon can I use my membership?
                     </dt>
                     <dd className="text-base leading-6 text-gray-700">
-                      Perfect Teeth Dental Plan has no waiting periods,
+                      VantageOne Dental Savings Plan has no waiting periods,
                       exclusions or maximums. All members can utilize their
                       membership immediately upon enrolling and as much as
                       needed while a member.
@@ -144,7 +144,7 @@ export default function FAQ() {
                     </dt>
                     <dd className="text-base leading-6 text-gray-700">
                       Unlike traditional dental insurance plans that are filled
-                      with red-tape, Perfect Teeth Dental Plan has no maximums.
+                      with red-tape, VantageOne Dental Savings Plan has no maximums.
                       You can utilize your membership savings and perks as much
                       as needed while you are a member.
                       <br />
@@ -162,7 +162,7 @@ export default function FAQ() {
                       6. How long is my membership term?
                     </dt>
                     <dd className="text-base leading-6 text-gray-700">
-                      Perfect Teeth Dental Plan features an annual membership
+                      VantageOne Dental Savings Plan features an annual membership
                       term. Your membership will auto-renew at the end of its
                       respective term unless you notify your participating
                       dental office or membersy (administrator) that you would
@@ -203,7 +203,7 @@ export default function FAQ() {
                       <br />
                       Note: You are not required to present your member ID card
                       when visiting a participating dental office. You can
-                      simply notify the front desk that you are a Perfect Teeth
+                      simply notify the front desk that you are a VantageOne
                       Dental Plan member and they will verify your eligibility
                       real-time.
                     </dd>
@@ -219,7 +219,7 @@ export default function FAQ() {
                       support specialist. We’re always happy to assist our
                       valued members.
                       <br />
-                      Note: Perfect Teeth Dental Plan is powered by membersy, an
+                      Note: VantageOne Dental Savings Plan is powered by membersy, an
                       Austin-based digital health company that provides dental
                       service organizations of all sizes—from small startups to
                       large enterprises—with thoughtfully designed membership

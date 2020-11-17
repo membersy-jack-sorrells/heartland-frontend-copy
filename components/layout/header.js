@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from 'next/router';
 import { Image } from "cloudinary-react";
 import Link from "next/link";
 
@@ -7,6 +8,7 @@ import { login, navigation } from "../../data/header";
 export const Header = () => {
   const [openLoginMenu, setOpenLoginMenu] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const router = useRouter();
 
   return (
     <nav className="bg-white">
@@ -113,12 +115,15 @@ export const Header = () => {
             >
               Join now
             </button> */}
-            <a
-              href="/join-now"
-              className="hidden sm:hidden md:block whitespace-no-wrap inline-flex items-center justify-center my-2 px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition ease-in-out duration-150 3xl:text-lg"
-            >
-              Join now
-            </a>
+            {router.pathname !== '/join-now' && (
+              <a
+                href="/join-now"
+                className="hidden sm:hidden md:block whitespace-no-wrap inline-flex items-center justify-center my-2 px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition ease-in-out duration-150 3xl:text-lg"
+              >
+                Join now
+              </a>
+            )}
+            
 
             {/* <!-- Profile dropdown --> */}
             <div className="ml-3 relative">
@@ -188,14 +193,16 @@ export const Header = () => {
               </a>
             ))}
 
-            <span class="inline-flex rounded-md shadow-sm">
-              <a
-                href="/join-now"
-                className="whitespace-no-wrap inline-flex items-center justify-center my-2 px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition ease-in-out duration-150"
-              >
-                Join now
-              </a>
-            </span>
+            {router.pathname !== '/join-now' && (
+              <span class="inline-flex rounded-md shadow-sm">
+                <a
+                  href="/join-now"
+                  className="whitespace-no-wrap inline-flex items-center justify-center my-2 px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition ease-in-out duration-150"
+                >
+                  Join now
+                </a>
+              </span>
+            )}
           </div>
         </div>
       )}

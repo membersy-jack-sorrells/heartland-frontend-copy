@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Layout } from "../components/layout/layout";
 import { Image, Transformation } from "cloudinary-react";
 import { savingsColumns, savingsData } from "../data/pick-your-plan";
@@ -57,7 +59,7 @@ export default function PickYourPlan() {
 
 
 
-      <div class="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:pt-48 md:pb-4 lg:text-left">
+      <div class="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 w-full pt-16 pb-20 text-center lg:pt-48 md:pb-4 lg:text-left">
         <div class="px-4 w-full sm:px-8 xl:pr-16 text-center">
           <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-white sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
             Options For Every Smile
@@ -86,7 +88,7 @@ export default function PickYourPlan() {
 
       <div className="">
         <div className="relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="mx-auto max-w-7xl lg:max-w-none lg:w-3/4 3xl:w-3/5 px-4 sm:px-6">
             {/* <!-- Pricing with four tiers and toggle --> */}
             <div>
               <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -128,12 +130,19 @@ export default function PickYourPlan() {
                           /person
                         </span>
                       </p>
-                      <button
-                        type="button"
-                        className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                      <Link 
+                        href={{
+                          pathname: '/join-now',
+                          query: { plan: 'classic', billingFrequency: 'annual'}
+                        }}
                       >
-                        Select Membership
-                      </button>
+                        <button
+                          type="button"
+                          className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                        >
+                          Select Membership
+                        </button>
+                      </Link>
                     </div>
                     <div className="pt-6 pb-8 px-10">
                       <h3 className="text-xs leading-4 font-medium text-gray-900 tracking-wide uppercase">
@@ -218,12 +227,19 @@ export default function PickYourPlan() {
                               /person
                             </span>
                           </p>
-                          <button
-                            type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                          <Link 
+                            href={{
+                              pathname: '/join-now',
+                              query: { plan: 'premium', billingFrequency: 'annual' }
+                            }}
                           >
-                            Select Membership
-                          </button>
+                            <button
+                              type="button"
+                              className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                            >
+                              Select Membership
+                            </button>
+                          </Link>
                         </>
                       )}
 
@@ -243,25 +259,43 @@ export default function PickYourPlan() {
                           <p className="mt-6 text-sm leading-5 text-blue-600">
                             Upfront fee billed annually
                           </p>
-                          <p className="mt-3 text-sm leading-5 text-blue-600">
-                            + $8 / user / mo
-                          </p>
-                          {/* <p className="mt-3 text-sm leading-5 text-blue-600">
+                          <p className="mt-1 text-sm leading-5 text-blue-600">
                             + $8 / user / mo - first user
                           </p>
+                          <p className="mt-6 text-sm leading-5 text-gray-500">
+                            Additional Member(s)
+                          </p>
+                          <p className="mt-2">
+                            <span className="text-4xl leading-10 font-extrabold text-blue-600">
+                              $70
+                            </span>
+                            <span className="text-base leading-6 font-medium text-blue-600">
+                              /person
+                            </span>
+                          </p>
                           <p className="mt-3 text-sm leading-5 text-blue-600">
+                            Upfront fee billed annually
+                          </p>
+                          <p className="mt-1 text-sm leading-5 text-blue-600">
                             + $6 / user / mo - each user after
-                          </p> */}
+                          </p>
                           <p className="px-8 mt-3 text-xs leading-5 text-gray-700">
                             *Monthly payment varies dependent on the number of
                             members on the same plan.
                           </p>
-                          <button
-                            type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                          <Link 
+                            href={{
+                              pathname: '/join-now',
+                              query: { plan: 'premium', billingFrequency: 'monthly' }
+                            }}
                           >
-                            Select Membership
-                          </button>
+                            <button
+                              type="button"
+                              className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                            >
+                              Select Membership
+                            </button>
+                          </Link>
                         </>
                       )}
                     </div>
@@ -352,12 +386,19 @@ export default function PickYourPlan() {
                               /yr
                             </span>
                           </p>
-                          <button
-                            type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                          <Link 
+                            href={{
+                              pathname: '/join-now',
+                              query: { plan: 'premiumPlus', billingFrequency: 'annual' }
+                            }}
                           >
-                            Select Membership
-                          </button>
+                            <button
+                              type="button"
+                              className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                            >
+                              Select Membership
+                            </button>
+                          </Link>
                         </>
                       )}
 
@@ -377,25 +418,43 @@ export default function PickYourPlan() {
                           <p className="mt-6 text-sm leading-5 text-blue-600">
                             Upfront fee billed annually
                           </p>
-                          <p className="mt-3 text-sm leading-5 text-blue-600">
-                            + $8 / user / mo
-                          </p>
-                          {/* <p className="mt-3 text-sm leading-5 text-blue-600">
+                          <p className="mt-1 text-sm leading-5 text-blue-600">
                             + $20 / user / mo - first user
                           </p>
+                          <p className="mt-6 text-sm leading-5 text-gray-500">
+                            Additional Member(s)
+                          </p>
+                          <p className="mt-2">
+                            <span className="text-4xl leading-10 font-extrabold text-blue-600">
+                              $70
+                            </span>
+                            <span className="text-base leading-6 font-medium text-blue-600">
+                              /person
+                            </span>
+                          </p>
                           <p className="mt-3 text-sm leading-5 text-blue-600">
+                            Upfront fee billed annually
+                          </p>
+                          <p className="mt-1 text-sm leading-5 text-blue-600">
                             + $17 / user / mo - each user after
-                          </p> */}
-                          <p className="px-8 mt-3 text-xs leading-5 text-gray-700">
+                          </p>
+                          <p className="px-8 mt-1 text-xs leading-5 text-gray-700">
                             *Monthly payment varies dependent on the number of
                             members on the same plan.
                           </p>
-                          <button
-                            type="button"
-                            className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                          <Link 
+                            href={{
+                              pathname: '/join-now',
+                              query: { plan: 'premiumPlus', billingFrequency: 'monthly' }
+                            }}
                           >
-                            Select Membership
-                          </button>
+                            <button
+                              type="button"
+                              className="my-8 w-2/3 bg-green-600 border border-transparent rounded-full py-2 text-sm leading-5 font-semibold text-white hover:bg-green-500 focus:outline-none focus:border-green-400 focus:shadow-outline-green active:bg-green-400 transition duration-150 ease-in-out"
+                            >
+                              Select Membership
+                            </button>
+                          </Link>
                         </>
                       )}
                     </div>
@@ -503,7 +562,7 @@ export default function PickYourPlan() {
                         <tr>
                           {savingsColumns.map(({ title }) => (
                             <th
-                              className="px-6 py-3 bg-blue-600 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider"
+                              className={`${title === 'Procedure Description' ? '' : 'text-center'} px-6 py-3 bg-blue-600 text-left text-xs leading-4 font-medium text-white uppercase tracking-wider`}
                               key={title}
                             >
                               {title}
@@ -530,15 +589,13 @@ export default function PickYourPlan() {
                                 </div>
                               </div>
                             </td>
-                            <td className="px-6 py-4 whitespace-no-wrap">
-                              <div className="text-sm leading-5 text-gray-900">
-                                {item.classic}
-                              </div>
+                            <td className="px-6 py-4 whitespace-no-wrap text-center">
+                              {item.classic}
                             </td>
-                            <td className="px-6 py-4 whitespace-no-wrap">
+                            <td className="px-6 py-4 whitespace-no-wrap text-center">
                               {item.premium}
                             </td>
-                            <td className="px-6 py-4 whitespace-no-wrap">
+                            <td className="px-6 py-4 whitespace-no-wrap text-center">
                               {item.premiumPlus}
                             </td>
                           </tr>
